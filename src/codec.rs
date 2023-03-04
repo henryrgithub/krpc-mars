@@ -65,6 +65,14 @@ impl RPCExtractable for u32 {
     }
 }
 
+impl RPCExtractable for u8 {
+    fn extract_value(
+        input: &mut protobuf::CodedInputStream,
+    ) -> Result<Self, protobuf::ProtobufError> {
+        input.read_raw_byte()
+    }
+}
+
 impl RPCExtractable for i64 {
     fn extract_value(
         input: &mut protobuf::CodedInputStream,
