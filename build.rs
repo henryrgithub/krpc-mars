@@ -6,4 +6,5 @@ fn main() {
         .inputs(&["protos/krpc.proto"])
         .run()
         .expect("protoc");
+    println!("mars build.rs doing things");
 }
